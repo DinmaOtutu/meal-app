@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Log file
+meal-app.log
+
+# build output
+dist
+
+# dotenv file
+.env

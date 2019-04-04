@@ -1,0 +1,56 @@
+{
+  "name": "meal-app",
+  "version": "1.0.0",
+  "description": "Meal app",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "eslint": "^5.15.2",
+    "nodemon": "^1.18.10",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.19",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-unique-validator": "^2.0.2",
+    "morgan": "^1.9.1",
+    "nodemailer": "^5.1.1",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "regenerator-runtime": "^0.13.2",
+    "shortid": "^2.2.14",
+    "winston": "^3.2.1"
+  },
+  "scripts": {
+    "start": "npm run build && node dist/bin/www.js",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "babel src -d dist",
+    "dev": "nodemon --watch src --delay 250ms --exec babel-node src/bin/www.js --ignore tests/",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html mocha --require @babel/register ./src/tests/* --no-deprecation  --timeout 1000000 --exit  && nyc report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DinmaOtutu/meal-app.git"
+  },
+  "author": "Dinma Otutu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DinmaOtutu/meal-app/issues"
+  },
+  "homepage": "https://github.com/DinmaOtutu/meal-app#readme"
+}
