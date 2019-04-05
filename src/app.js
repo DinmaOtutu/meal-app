@@ -1,14 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
-import cors from 'cors';
-import expressValidator from 'express-validator';
 import routes from './routes';
-import isValidDate from './helpers/dateVerification';
 
 // Set up the express app
 const app = express();
-app.use(cors());
 
 // Log requests to the console.
 app.use(logger('dev'));
@@ -17,14 +13,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Validator to check requests
-app.use(expressValidator({
-  customValidators: { isValidDate }
-}));
 
-// Routes
+app.get('/api', (req, res) => {
+  res.json('Welcome to Meal Api');
+});
+
+//Routes
 app.use('/api', routes);
-
 
 // Setup a default catch-all route
 app.use('*', (req, res, next) => {
