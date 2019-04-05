@@ -21,25 +21,25 @@ class MealController {
 
       // mapping through the list of ids in the request body and making axios call
       const mealObjects = await Promise.all(mealIds.map(async (mealId) => {
-
         // to store the list of Ingredients that are not empty or null
         const lists = [];
 
         // making a call to https://themealdb.com/api.php's endpoint to get each particular meal with their id
         const mealsId = (await axios.get(`${MEAL_URL}${mealId}`)).data;
 
-        // check if the meal id exist in https://themealdb.com/api.php, if it doesnt push to the array
+        // check if the meal id exist in https://themealdb.com/api.php, if it doesn't, push to the invalid meal id array
         if (mealsId.meals === null) return invalidMealId.push(mealId);
 
         // when the object response from https://themealdb.com/api.php is returned
-        // it comes in form of an array of objects, so SELECT the array
+        // it comes in form of an array of object, so SELECT the array
         const getMealObject = mealsId.meals[0];
 
         // get the keys for each object in the array
         const mealObject = Object.keys(getMealObject);
 
-        // filter the objects and get the ingredients
+        // filter the keys returned and select those which have strIngredients
         const allMealIngredients = mealObject.filter(meal => meal.includes('strIngredient'));
+
         // map the filtered object and get the keys of that are neither empty strings nor null
         allMealIngredients.map((key) => {
           if (getMealObject[key] !== '' && getMealObject[key] !== null) lists.push(key);
