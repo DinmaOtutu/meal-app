@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import expressValidator from 'express-validator';
 import logger from 'morgan';
 import routes from './routes';
 
@@ -18,7 +19,10 @@ app.get('/api', (req, res) => {
   res.json('Welcome to Meal Api');
 });
 
-//Routes
+// Validator to check requests
+app.use(expressValidator());
+
+// Routes
 app.use('/api', routes);
 
 // Setup a default catch-all route
