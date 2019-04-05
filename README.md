@@ -15,7 +15,7 @@ list of libraries, tools, and technologies used.
 - [express.js](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 - [Node.js](https://nodejs.org/en/) - A JavaScript runtime environment
 - [Docker](https://www.docker.com/) - For container
-- A package manager - [[NPM](https://www.npmjs.com/)
+- A package manager - [[NPM]](https://www.npmjs.com/)
 
 ### Getting Started
 
@@ -33,7 +33,7 @@ list of libraries, tools, and technologies used.
 ```
 POST REQUEST
 {
-    "mealIds" : [numbers, numbers, .......]  "password" : "superagent password"
+    "mealIds" : [id1, id2, .......]
 }
 localhost:8080/api/meal
 ```
