@@ -18,12 +18,11 @@ class MealController {
       const invalidMealId = [];
 
       const { mealIds } = req.body;
-      if (mealIds !== Number) {
+      if (mealIds.some(isNaN)) {
         return res.status(400).json({
-          message: 'Sorry, meal IDs are only numbers',
+          message: 'Sorry, ids can only be numbers',
         });
       }
-
       // mapping through the list of ids in the request body and making axios call
       const mealObjects = await Promise.all(mealIds.map(async (mealId) => {
         // to store the list of Ingredients that are not empty or null
@@ -42,9 +41,8 @@ class MealController {
         // get the keys for each object in the array
         const mealObject = Object.keys(getMealObject);
 
-        // filter the keys returned and select those which have strIngredients
+        // filter the objects and get the ingredients
         const allMealIngredients = mealObject.filter(meal => meal.includes('strIngredient'));
-
         // map the filtered object and get the keys of that are neither empty strings nor null
         allMealIngredients.map((key) => {
           if (getMealObject[key] !== '' && getMealObject[key] !== null) lists.push(key);
@@ -67,6 +65,7 @@ class MealController {
         message: `The meal with ID: ${leastIngredientsMeal.mealId} has the least number of ingredients (${leastIngredientsMeal.lengthOfIngredients})`
       });
     } catch (error) {
+      return console.log(error);
       return res.status(500).json({
         message: 'Failed to return the meal with the least ingredients',
       });

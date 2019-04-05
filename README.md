@@ -24,6 +24,8 @@ list of libraries, tools, and technologies used.
 - cd meal-app.
 - docker build -t meal-app .
 - docker run -it -p 8080:8080 meal-app
+- If you do not have docker installed, run `npm install`
+- run `npm start`
 
 # Description of features
 
@@ -41,6 +43,7 @@ localhost:8080/api/meal
 
 ## RESPONSES
 - 200 : Success
+![](path/to/image.png)
 - 400 : Invalid meal Id
 - 500 : Internal server error
 ## AUTHOR
