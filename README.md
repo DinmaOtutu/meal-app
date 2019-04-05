@@ -33,7 +33,7 @@ list of libraries, tools, and technologies used.
 ```
 POST REQUEST
 {
-    "mealIds" : [numbers, numbers, .......]
+    "mealIds" : [id1, id2, .......]
 }
 localhost:8080/api/meal
 ```
