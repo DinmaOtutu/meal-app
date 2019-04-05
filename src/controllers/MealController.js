@@ -18,6 +18,11 @@ class MealController {
       const invalidMealId = [];
 
       const { mealIds } = req.body;
+      if (mealIds !== Number) {
+        return res.status(400).json({
+          message: 'Sorry, meal IDs are only numbers',
+        });
+      }
 
       // mapping through the list of ids in the request body and making axios call
       const mealObjects = await Promise.all(mealIds.map(async (mealId) => {

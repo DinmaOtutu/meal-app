@@ -5,6 +5,7 @@ Accepts lists of MEAL IDs that exist in `https://themealdb.com/api.php` and retu
 
 - [Description of features](#description-of-feature)
   - [LIST OF MEAL IDS](#list-of-meal-Ids)
+  - [RESPONSES](#Responses)
 
 ## Setup
 
@@ -38,5 +39,9 @@ POST REQUEST
 localhost:8080/api/meal
 ```
 
+## RESPONSES
+- 200 : Success
+- 400 : Invalid meal Id
+- 500 : Internal server error
 ## AUTHOR
 - Yours truly DinmaOtutu
