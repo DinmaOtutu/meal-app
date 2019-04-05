@@ -4,6 +4,7 @@ const verifyMealIdInputs = {
   mealIdBody: (req, res, next) => {
     req.check('mealIds', 'meal ID is required').trim().notEmpty();
     req.check('mealIds', 'meal ID should be an array').isArray();
+    req.check('mealIds', 'meal ID should be an array').isInt();
 
     validationErrorHandler(req, res, next);
   }

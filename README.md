@@ -24,6 +24,8 @@ list of libraries, tools, and technologies used.
 - cd meal-app.
 - docker build -t meal-app .
 - docker run -it -p 8080:8080 meal-app
+- If you do not have docker installed, run `npm install`
+- run `npm start`
 
 # Description of features
 
@@ -41,7 +43,12 @@ localhost:8080/api/meal
 
 ## RESPONSES
 - 200 : Success
+![](<img width="1157" alt="Screen Shot 2019-04-06 at 12 23 48 AM" src="https://user-images.githubusercontent.com/39683587/55661352-507c9980-5803-11e9-8666-0c354caeb457.png">)
 - 400 : Invalid meal Id
+![](<img width="1143" alt="Screen Shot 2019-04-06 at 12 23 17 AM" src="https://user-images.githubusercontent.com/39683587/55661375-6a1de100-5803-11e9-9dc9-60f834af4b1e.png">)
+
+![](<img width="1153" alt="Screen Shot 2019-04-06 at 12 22 55 AM" src="https://user-images.githubusercontent.com/39683587/55661385-799d2a00-5803-11e9-92cf-c70e31ef7e94.png">)
+
 - 500 : Internal server error
 ## AUTHOR
 - Yours truly DinmaOtutu
