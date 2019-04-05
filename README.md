@@ -48,8 +48,11 @@ localhost:8080/api/meal
 - 400 : Invalid meal Id
 ![image](https://user-images.githubusercontent.com/39683587/55661375-6a1de100-5803-11e9-9dc9-60f834af4b1e.png)
 
+- 400 : Invalid input
 ![image](https://user-images.githubusercontent.com/39683587/55661385-799d2a00-5803-11e9-92cf-c70e31ef7e94.png)
 
 - 500 : Internal server error
+
+
 ## AUTHOR
 - Yours truly DinmaOtutu
